@@ -75,20 +75,20 @@ data <- afro_base
 data$sub_saharan <- 1
 data$sub_saharan[data$COUNTRY=="1" | data$COUNTRY=="9" | data$COUNTRY=="33" | data$COUNTRY=="20"] <- 0 # Drop Algeria, Egypt, Tunisia, Morocco
 
-data <- subset(afro, select=c(RESPNO, COUNTRY, URBRUR, Combinwt, sub_saharan,
-                              Q52H, Q52J, Q52I, Q42A, Q42B, Q42C, #DVs
-                              Q72, Q55I, Q55J, Q55K, Q55L, Q73A, Q73B, Q73C, Q73D, Q73E, Q74A, Q74B, #IVs
-                              Q49, Q50, Q51A, Q51B, Q51C, Q51D, EA.FAC.C, EA.SEC.A, EA.SEC.B, EA.SEC.C, #Controls
-                              Q8A, Q8B, Q8C, Q8D, Q8E, #Q8A-F: measure of poverty / scarcity
-                              
-                              Q1, Q100, Q101, Q4A, Q4B, Q5,
-                              EA.SVC.A, EA.SVC.B, EA.SVC.C, EA.SVC.D,
-                              Q88A, Q87, Q64, Q45D, Q24E, 
-                              Q53A, Q53B, Q53C, Q53D, 
-                              Q53E, Q53F, Q53G, Q53H,
-                              Q52A, Q52B, Q52C, Q52D, Q52E, Q52F, Q52G, Q52H, Q52I, Q52J, Q52K, Q52L,
-                              Q97
-))
+# data <- subset(afro, select=c(RESPNO, COUNTRY, URBRUR, Combinwt, sub_saharan,
+#                               Q52H, Q52J, Q52I, Q42A, Q42B, Q42C, #DVs
+#                               Q72, Q55I, Q55J, Q55K, Q55L, Q73A, Q73B, Q73C, Q73D, Q73E, Q74A, Q74B, #IVs
+#                               Q49, Q50, Q51A, Q51B, Q51C, Q51D, EA.FAC.C, EA.SEC.A, EA.SEC.B, EA.SEC.C, #Controls
+#                               Q8A, Q8B, Q8C, Q8D, Q8E, #Q8A-F: measure of poverty / scarcity
+#                               
+#                               Q1, Q100, Q101, Q4A, Q4B, Q5,
+#                               EA.SVC.A, EA.SVC.B, EA.SVC.C, EA.SVC.D,
+#                               Q88A, Q87, Q64, Q45D, Q24E, 
+#                               Q53A, Q53B, Q53C, Q53D, 
+#                               Q53E, Q53F, Q53G, Q53H,
+#                               Q52A, Q52B, Q52C, Q52D, Q52E, Q52F, Q52G, Q52H, Q52I, Q52J, Q52K, Q52L,
+#                               Q97
+# ))
 
 
 ######################################
@@ -116,19 +116,18 @@ data$trust_courts <- func.recode(data$Q52J)
 data$trust_trad <- func.recode(data$Q52K)
 data$trust_relig <- func.recode(data$Q52L)
 
-data$trust_state_inst <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax +  
-                         data$trust_local + data$trust_police + data$trust_army + data$trust_courts 
+data$trust_state_inst <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax +  data$trust_local + data$trust_police + data$trust_army + data$trust_courts 
 
-data$trust_state_inst_no_police <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax + 
-                        data$trust_local + data$trust_army + data$trust_courts 
+data$trust_state_inst_no_police <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax + data$trust_local + data$trust_army + data$trust_courts 
 
-data$trust_state_inst_no_army <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax + 
-                        data$trust_local + data$trust_police + data$trust_courts 
+data$trust_state_inst_no_army <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax + data$trust_local + data$trust_police + data$trust_courts 
 
-data$trust_state_inst_no_courts <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax + 
-                        data$trust_local + data$trust_army + data$trust_police 
+data$trust_state_inst_no_courts <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax + data$trust_local + data$trust_army + data$trust_police 
 
 ######### SKD START HERE ###########
+### testing from nano
+### here i'm making changes in R
+## i've been through the desert on a horse w no name.
 
 ########### DV: Legitimacy of state institutions ############# 
 #1: strongly disagree, 5: strongly agree
