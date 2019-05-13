@@ -125,9 +125,7 @@ data$trust_state_inst_no_army <- data$trust_pres + data$trust_par + data$trust_e
 data$trust_state_inst_no_courts <- data$trust_pres + data$trust_par + data$trust_elect + data$trust_tax + data$trust_local + data$trust_army + data$trust_police 
 
 ######### SKD START HERE ###########
-### testing from nano
-### here i'm making changes in R
-## i've been through the desert on a horse w no name.
+### I will start cleaning here in the morning ###
 
 ########### DV: Legitimacy of state institutions ############# 
 #1: strongly disagree, 5: strongly agree
