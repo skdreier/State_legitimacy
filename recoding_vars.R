@@ -5,7 +5,7 @@
 # RECODING VARIABLES FOR ANALYSIS             #
 #                                             #
 # R version 3.4.4 (2018-03-15)                #
-# DATE: 5/12/2019                              #
+# DATE: 5/13/2019                              #
 ###############################################
 
 # Content:
@@ -19,31 +19,31 @@
 rm(list=ls())
 
 library(Hmisc)
-
-library(foreign)
-library(descr)
-library(reshape)
-library(plyr)
-library(dplyr)
-library(stringr)
-library(ggplot2)
-library(modeest)
-library(xtable)
-library(stargazer)
-library(rpart)
-library(arm)
-library(data.table)
-library(dummies)
-library(Amelia)
-library(MASS)
-library(nlme)
-library(verification)
-library(simcf)
-library(tile)
-library(Zelig)
-library(cluster)
-library(ZeligChoice)
-library(RColorBrewer)
+# 
+# library(foreign)
+# library(descr)
+# library(reshape)
+# library(plyr)
+# library(dplyr)
+# library(stringr)
+# library(ggplot2)
+# library(modeest)
+# library(xtable)
+# library(stargazer)
+# library(rpart)
+# library(arm)
+# library(data.table)
+# library(dummies)
+# library(Amelia)
+# library(MASS)
+# library(nlme)
+# library(verification)
+# library(simcf)
+# library(tile)
+# library(Zelig)
+# library(cluster)
+# library(ZeligChoice)
+# library(RColorBrewer)
 
 #####################
 ### LOAD PACKAGES ###
@@ -196,6 +196,8 @@ data$no_court_exp2 <- ifelse (data$court_exp_scale > 15, 1, 0)
 
 # Scale for court experience: 0=no neg experience, 1-15=negative experience, NA=no court experience
 data$court_exp_scale[data$court_exp_scale > 15] <- NA
+
+## SKD stopped here 05/13 ##
 
 ##################################
 ########### Controls #############
