@@ -1,3 +1,5 @@
+# Code developed by Dr. Loren Collingwood (https://www.collingwoodresearch.com/)
+
 # Making multiple plots in one graph
 multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
   library(grid)
