@@ -211,7 +211,7 @@ data$police.station <- ifelse(data$EA.FAC.C==1, 1, 0)
 data_sub <- data.frame(data[,1:2], data[,353:354], data[,368:425])
 
 # Write and save new dataset
-write.csv(data_sub, "Repo_StateLegit/afro_courts_police_052019.csv")
+write.csv(data_sub, "Repo_StateLegit/afro_courts_police.csv")
 
 
 ##################################################
