@@ -18,14 +18,37 @@ library(ZeligChoice)
 library(magrittr)
 library(lme4)
 library(ggplot2)
+library(stargazer)
 
-setwd("~/Dropbox/Current_Projects/MLake_SDreier_Project/sarah_data_analysis/Repo_Statelegit")
-data_base <- read.csv("afro_courts_police_052019.csv", header = TRUE)
+setwd("~/Dropbox/Current_Projects/MLake_SDreier_Project/sarah_data_analysis")
 
-colnames(data_base)
+data_new <- read.csv("Repo_StateLegit/afro_courts_police_052019.csv", header = TRUE)
+data_old <- read.csv("data/afrob6_courts_police_old.csv", header = TRUE)
+
+all.equal(table(data_new$trust_courts), table(data_old$trust_courts))
+all.equal(table(data_new$court_exp_scale), table(data_old$court_exp_scale))
+all.equal(table(data_new$trust_state_inst_no_courts), table(data_old$trust_state_inst_no_courts))
+all.equal(table(data_new$careful_talk_politics), table(data_old$careful_talk_politics))
+all.equal(table(data_new$traditional), table(data_old$traditional))
+all.equal(table(data_new$age), table(data_old$age))
+all.equal(table(data_new$rel_living_conditions), table(data_old$rel_living_conditions))
+all.equal(table(data_new$urban), table(data_old$urban))
+all.equal(table(data_new$scarcity), table(data_old$scarcity))
+all.equal(table(data_new$public_goods), table(data_old$public_goods))
+all.equal(table(data_new$police.station), table(data_old$police.station))
+all.equal(table(data_new$Combinwt), table(data_old$Combinwt))
+all.equal(table(data_new$COUNTRY), table(data_old$COUNTRY))
+
+all.equal(table(data_new$trust_army), table(data_old$trust_army))
+
+
+table(data_new$rel_living_conditions)
+table(data_old$rel_living_conditions)
+
+data_base <- read.csv("Repo_StateLegit/afro_courts_police_052019.csv", header = TRUE)
 
 # Create country fixed effects
-dummy_data <- dummy(data$COUNTRY)
+dummy_data <- dummy(data_base$COUNTRY)
 data <- data.frame(data_base,dummy_data)
 
 ###################
@@ -53,10 +76,6 @@ model <- formula(  as.factor(trust_courts) ~ court_exp_scale + trust_state_inst_
 
 mdata <- extractdata(model, data, na.rm=TRUE) #extract
 summary(ologit.1a <- polr(model, mdata, method="logistic", Hess=TRUE) )  #run model -- for stargazer
-
-
-table(data$country)
-table(data$COUNTRY)
 
 summary(z_mod <- zelig (model, data=mdata, model = "ologit"))  #run model -- for simulation
 x.out <- setx(z_mod, court_exp_scale = court_range)#c(0,15))
@@ -270,18 +289,6 @@ model <- formula(  as.factor(trust_courts) ~ neg_court_exp + pos_court_exp + tru
 mdata <- extractdata(model, data, na.rm=TRUE) #extract
 summary(ologit.3a <- polr(model, mdata, method="logistic", Hess=TRUE) )  #run model -- for stargazer
 
-
-#hierarchical:
-fml <- lmer(
-  trust_courts ~ neg_court_exp + (neg_court_exp | country) + 
-    pos_court_exp + trust_state_inst_no_courts + 
-    careful_talk_politics + fear_pol_violence +  traditional +
-    age + female + educ + rel_living_conditions + 
-    urban + scarcity + public_goods + police.station, data
-)
-summary(fml)
-
-#look at pg 83, 
 
 ### model 3b: legit_courts ~ neg_court_exp (dummy)
 model <- formula(  as.factor(courts_right) ~  neg_court_exp + pos_court_exp + inst_right_comp_no_courts + 

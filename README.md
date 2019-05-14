@@ -2,7 +2,7 @@
 This repository contains the replication material for "Institutional legitimacy in sub-Saharan Africa," which is forthcoming in Democratization (2019). 
 
 ## Authors
-Sarah Dreier and Milli Lake.
+Sarah K. Dreier and Milli Lake.
 
 ## Recode and prepare data
 
@@ -15,3 +15,5 @@ The original dataset "merged_r6_data_2016_36countries2.sav" contains the merged 
 main_analysis.R runs the models and plots featured in the article's main analysis. 
 
 desc_stats.R features code for descriptive statistics tables and plots.
+
+
