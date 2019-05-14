@@ -19,14 +19,14 @@ library(magrittr)
 library(lme4)
 library(ggplot2)
 
-setwd("~/Dropbox/Current_Projects/MLake_SDreier_Project/sarah_data_analysis")  
+setwd("~/Dropbox/Current_Projects/MLake_SDreier_Project/sarah_data_analysis/Repo_Statelegit")
+data_base <- read.csv("afro_courts_police_052019.csv", header = TRUE)
 
-data <- read.csv("data/afrob6_courts_police.csv", header = TRUE) #n=45,541
+colnames(data_base)
 
 # Create country fixed effects
-dummy_data <- dummy(data$country)
-original_data <- data.frame(data,dummy_data)
-data <- original_data
+dummy_data <- dummy(data$COUNTRY)
+data <- data.frame(data_base,dummy_data)
 
 ###################
 #   MAIN MODELS   #
