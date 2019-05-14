@@ -1,4 +1,4 @@
-# State_legitimacy
+# State Legitimacy
 This repository contains the replication material for "Institutional legitimacy in sub-Saharan Africa," which is forthcoming in Democratization (2019). 
 
 ## Authors
