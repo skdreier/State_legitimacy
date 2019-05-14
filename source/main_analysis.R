@@ -31,6 +31,7 @@ packages<-c("broom", "ggplot2", "lme4", "lmtest", "magrittr", "MASS", "multiwayv
 suppressWarnings( check.packages(packages) )
  
 # Load source for mv_extract
+# Code attribution: Loren Collingwood
 source("source/multiplot_code_lc.R")
 
 # Load data
