@@ -1,6 +1,6 @@
 ###############################################
 # Replication Code for:                       #
-# Dreier and Lake (Democratization            #
+# Dreier and Lake (Democratization)           #
 #                                             #
 # RECODING VARIABLES FOR ANALYSIS             #
 #                                             #
@@ -10,11 +10,8 @@
 
 # Content:
 # - Load raw Afrobarometer data
-# - For herfindahl variables: relable missing/don't know/refused as "NA"
-# - Recode and bin religious identities
-# - Write/run Herfindahl function
-# - Merge back to all Afro data
-# NOTE: Select code adapted from Loren Collingwood (https://www.collingwoodresearch.com/)
+# - Recode variables for analysis
+# - Save new dataset 
 
 rm(list=ls())
 
@@ -223,30 +220,27 @@ write.csv(data_sub, "Repo2/afro_courts_police_052019.csv")
 
 
 
-
-
-
-
-#################### NOT USED? #######################
-
-### Q53E Police corruption 0=none corrupt; 3=all corrupt
-data$police_corrupt <- data$Q53E
-data$police_corrupt[data$police_corrupt==-1] <- NA
-
-######## Additional recoding Oct 2017 ###########
-
-data$judge_dummy <- NA
-data$judge_dummy[data$judge_no_listen == 0 | data$judge_no_listen == 100 ] <- 0
-data$judge_dummy[data$judge_no_listen == 1 | data$judge_no_listen == 2 | data$judge_no_listen == 3] <- 1
-
-#data$trad1 <- ifelse(data$Q74A==18, 2, 0) # 18: Trad leaders is #1 reason people don't go to courts 
-#data$trad2 <- ifelse(data$Q74B==18, 1, 0) # 18: Trad reason is #2 reason people don't go to courts 
-#data$trad_comp <- with(data, traditional + trad1 + trad2)
-
-## dummy variable: interviewer saw a police person
-## 0: no or don't know (20 DK), 1: yes
-data$saw.police <- rep(0, dim(data)[1])
-data$saw.police[data$EA.SEC.A==1] <- 1
-
-cor(data$police.station, data$saw.police) # .48
-cor(data$EA.FAC.C, data$EA.SEC.A) # .23
+# 
+# #################### NOT USED? #######################
+# 
+# ### Q53E Police corruption 0=none corrupt; 3=all corrupt
+# data$police_corrupt <- data$Q53E
+# data$police_corrupt[data$police_corrupt==-1] <- NA
+# 
+# ######## Additional recoding Oct 2017 ###########
+# 
+# data$judge_dummy <- NA
+# data$judge_dummy[data$judge_no_listen == 0 | data$judge_no_listen == 100 ] <- 0
+# data$judge_dummy[data$judge_no_listen == 1 | data$judge_no_listen == 2 | data$judge_no_listen == 3] <- 1
+# 
+# #data$trad1 <- ifelse(data$Q74A==18, 2, 0) # 18: Trad leaders is #1 reason people don't go to courts 
+# #data$trad2 <- ifelse(data$Q74B==18, 1, 0) # 18: Trad reason is #2 reason people don't go to courts 
+# #data$trad_comp <- with(data, traditional + trad1 + trad2)
+# 
+# ## dummy variable: interviewer saw a police person
+# ## 0: no or don't know (20 DK), 1: yes
+# data$saw.police <- rep(0, dim(data)[1])
+# data$saw.police[data$EA.SEC.A==1] <- 1
+# 
+# cor(data$police.station, data$saw.police) # .48
+# cor(data$EA.FAC.C, data$EA.SEC.A) # .23
