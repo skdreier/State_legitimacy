@@ -1,0 +1,21 @@
+The code for relative living conditions had an error in the original code and therefore did not NA-out the missing data (-1) and DK/refuse (9).
+
+Code with error: 
+
+data$rel_living_conditions <- data$Q5 data$rel_living_conditions[data$rel_living_conditions==-1 | 
+data$rel_living_conditions2==9] <- NA### THIS IS WHERE THE FUCKUP HAPPENED ### 
+data$rel_living_conditions2 <- data$Q5#data$rel_living_conditions <- func.recode(data$Q5) 
+data$rel_living_conditions2[data$rel_living_conditions2==-1 ] <- NA
+data$rel_living_conditions2[data$rel_living_conditions2==9 ] <- 3
+
+OR 
+
+data$rel_living_conditions <- data$Q5
+
+This is what the code should look like:
+
+#data$rel_living_conditions <- func.recode(data$Q5)
+
+RETAINED ORIGINAL CODE (WITH ERROR) BECAUSE IT DOES NOT CHANGE ANY MEANING OF THE TABLES AND WOULD CAUSE ISSUES W EDITORS AT THIS POINT.
+
+
