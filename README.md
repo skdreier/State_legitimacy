@@ -1,5 +1,5 @@
 # State Legitimacy
-This repository contains the replication material for "Institutional legitimacy in sub-Saharan Africa," which is forthcoming in Democratization (2019). 
+This repository contains the replication material for "Institutional legitimacy in sub-Saharan Africa," which is forthcoming in *Democratization* (2019). 
 
 ## Authors
 Sarah K. Dreier and Milli Lake.
@@ -8,7 +8,7 @@ Sarah K. Dreier and Milli Lake.
 
 The original dataset "merged_r6_data_2016_36countries2.sav" contains the merged Afrobarometer Round 6 (2016) survey data. It is available to be downloaded at: http://afrobarometer.org/sites/default/files/data/round-6/merged_r6_data_2016_36countries2.sav.
 
-"variable_recode.R"" cleans and recodes variables from the source Afrobarometer data and subsets into a new dataset (afro_courts_police.RData).
+[variable_recode.R](../skdreier/State_legitimacy/source/variable_recode.R) cleans and recodes variables from the source Afrobarometer data and subsets into a new dataset (afro_courts_police.RData).
 
 ## Main analysis
 
