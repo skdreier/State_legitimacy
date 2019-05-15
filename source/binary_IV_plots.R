@@ -8,8 +8,7 @@
 #### DATE: 5/14/2019                    ####
 ############################################
 
-# Content:
-# - Plot main binary IV models
+# Content: Plots main binary IV models
 
 # Clear directory
 rm(list=ls())
@@ -34,10 +33,6 @@ source("source/multiplot_code_lc.R")
 
 # Load data
 load(file="afro_courts_police.RData")
-
-# Create country fixed effects
-dummy_data <- dummy(data$COUNTRY)
-data <- data.frame(data,dummy_data)
 
 #set range (0-1) for all binary variables 
 range <- seq(0,1,length.out=100) 

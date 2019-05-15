@@ -5,7 +5,7 @@
 #### RECODING VARIABLES FOR ANALYSIS    ####
 ####                                    ####
 #### R version 3.4.4 (2018-03-15)       ####
-#### DATE: 5/13/2019                    ####
+#### DATE: 5/14/2019                    ####
 ############################################
 
 # Content:
@@ -203,13 +203,17 @@ data$careful_talk_politics <- func.recode(data$Q51A)
 # Police station present?: 0 (no/DK), 1 (yes)
 data$police_station <- ifelse(data$EA.FAC.C==1, 1, 0)
 
+# Create country fixed effects
+dummy_data <- dummy(data$COUNTRY)
+data <- data.frame(data,dummy_data)
+
 ###############################################
 #### SUBSET AND WRITE DATASET FOR ANALYSIS ####
 ###############################################
 
 # Subset to recoded variables and save to Rproj
 
-data <- data.frame(data[,1:2], data[,353:354], data[,368:425])
+data <- data.frame(data[,1:2], data[,353:354], data[,368:453])
 
 save(data, file = "afro_courts_police.RData")
 

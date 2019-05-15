@@ -8,9 +8,7 @@
 #### DATE: 5/14/2019                    ####
 ############################################
 
-# Content:
-# - Develop main models
-# - Plot main models
+# Content: Develop and plot main models
 
 # Clear directory
 rm(list=ls())
@@ -35,10 +33,6 @@ source("source/multiplot_code_lc.R")
 
 # Load data
 load(file="afro_courts_police.RData")
-
-# Create country fixed effects
-dummy_data <- dummy(data$COUNTRY)
-data <- data.frame(data,dummy_data)
 
 ###################################################################################
 #### COURT SCALE MODELS AND MAIN PLOT (subset to those with court experiences) ####
