@@ -20,7 +20,11 @@ All resulting [figures](figures/) are also posted in the repository.
 
 ## Descriptive statistics and robustness checks
 
-Original, messy scripts for descriptive statistics tables and figures () and for additional robustness-check models () are available in the xx folder.
+Original, messy scripts for descriptive statistics tables and figures
+
+() and for additional robustness-check models (03_main_models_replication.R)[old_scripts/03_main_models_replication.R]
+
+are available in the xx folder.
 
 ## Questions and contact information
 
